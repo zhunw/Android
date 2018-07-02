@@ -64,7 +64,7 @@ public class SettingActivity extends Activity implements OnClickListener{
 
         //解码Bundle
         Bundle bundle = this.getIntent().getExtras();
-        flag=bundle.getString("flag");
+        flag = bundle.getString("flag");
         //根据标志位获取图片来源
         if(flag.equals("1")){
             setImg.setImageResource(R.drawable.pika);
@@ -121,9 +121,9 @@ public class SettingActivity extends Activity implements OnClickListener{
 
     public void readFromSharedPreferences(String i){
         //get the setting
-        String name=sharedPreferences.getString("name"+i, null);
-        String birthday=sharedPreferences.getString("birthday"+i, null);
-        String character=sharedPreferences.getString("character"+i, null);
+        String name = sharedPreferences.getString("name" + i, null);
+        String birthday = sharedPreferences.getString("birthday" + i, null);
+        String character = sharedPreferences.getString("character" + i, null);
         //them set to show them
         set_et_name.setText(name);
         set_et_birthday.setText(birthday);

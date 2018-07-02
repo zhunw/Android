@@ -1,6 +1,7 @@
 package com.example.yang.pikachu.view;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.text.TextPaint;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -23,6 +24,7 @@ public class PetSelect extends RelativeLayout {
     private TextView name;
     private Switch mSwitch;
 
+    public int flag;
     //property
     private TextView pet_name;
     private TextView pet_birthday;
@@ -38,14 +40,34 @@ public class PetSelect extends RelativeLayout {
         this.name = (TextView)findViewById(R.id.select_name);
         this.mSwitch = (Switch)findViewById(R.id.select_switch);
 
+        this.pet_name = (TextView)findViewById(R.id.pet_name);
+        this.pet_birthday = (TextView)findViewById(R.id.pet_birthday);
+        this.pet_charac = (TextView)findViewById(R.id.pet_charac);
+
         //字体加粗
         TextPaint tp = this.name.getPaint();
         tp.setFakeBoldText(true);
+
+        flag = 1;
+    }
+
+    public void setProperties(SharedPreferences properties){
+        if(flag == -1)return;
+        String name = properties.getString("name" + flag, null);
+        String birthday = properties.getString("birthday" + flag, null);
+        String character = properties.getString("character" + flag, null);
+        pet_name.setText(name);
+        pet_birthday.setText(birthday);
+        pet_charac.setText(character);
     }
 
     public void setenabled(boolean l){
         mSwitch.setEnabled(l);
         editImg.setEnabled(l);
+    }
+
+    public void setFlag(int flag){
+        this.flag = flag;
     }
 
     public void setPetImg(int resourceID){

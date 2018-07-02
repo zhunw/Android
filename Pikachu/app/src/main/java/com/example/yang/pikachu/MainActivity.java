@@ -110,6 +110,13 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
             editor.putString("name1", "Pikachu");
             editor.putString("name2","Crocodile");
             editor.putString("name3","Elk");
+            editor.putString("birthday1", "2018/7/1");
+            editor.putString("birthday2","2018/7/2");
+            editor.putString("birthday3","2018/7/3");
+            editor.putString("character1", "很皮,懒惰");
+            editor.putString("character2","欠扁,好吃");
+            editor.putString("character3","同九年,何汝秀");
+
             editor.putBoolean("isSecondUnlock",true);
             editor.putBoolean("isFirstOn",false);
             editor.putBoolean("isSecondOn",false);
@@ -180,10 +187,10 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         // TODO Auto-generated method stub
 
     }
+
     @Override
     public void onPageSelected(int arg0) {
         // TODO Auto-generated method stub
 
     }
-
 }

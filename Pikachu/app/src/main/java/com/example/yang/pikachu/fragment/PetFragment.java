@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.CompoundButton;
 import android.widget.PopupMenu;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.yang.pikachu.R;
 import com.example.yang.pikachu.activity.SettingActivity;
@@ -38,6 +39,9 @@ public class PetFragment extends Fragment{
         second = (PetSelect)rootView.findViewById(R.id.select_2);
         third = (PetSelect)rootView.findViewById(R.id.select_3);
         fourth = (PetSelect)rootView.findViewById(R.id.select_4);
+        first.setFlag(1);
+        second.setFlag(2);
+        third.setFlag(3);
         init();
         setListener();
         return rootView;
@@ -55,6 +59,10 @@ public class PetFragment extends Fragment{
 
         third.setName(sharedPreferences.getString("name3", "Elk"));
         third.setCheck(sharedPreferences.getBoolean("isThirdOn", false));
+
+        first.setProperties(sharedPreferences);
+        second.setProperties(sharedPreferences);
+        third.setProperties(sharedPreferences);
     }
 
     private void init(){
@@ -69,6 +77,11 @@ public class PetFragment extends Fragment{
         second.setPetImg(R.drawable.kong);
         third.setPetImg(R.drawable.elk);
         fourth.setPetImg(R.drawable.v_unlock);
+
+        //set properties
+        first.setProperties(sharedPreferences);
+        second.setProperties(sharedPreferences);
+        third.setProperties(sharedPreferences);
     }
 
     private void setListener(){
@@ -81,6 +94,7 @@ public class PetFragment extends Fragment{
                 intent.putExtras(bundle);
                 intent.setClass(getActivity(), SettingActivity.class);
                 startActivity(intent);
+                Toast.makeText(getActivity(), "over", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -159,18 +173,20 @@ public class PetFragment extends Fragment{
                         editor.putBoolean("isSecondOn", false);
                         editor.putBoolean("isThirdOn", false);
                         editor.commit();
-                        System.out.println(sharedPreferences.getBoolean("isFirstOn", false));
                         //Intent intent = new Intent(getActivity(), FloatWindowService.class);
                         //getActivity().startService(intent);
                         //getActivity().finish();
+                        Intent intent = new Intent(getActivity(), BackService.class);
+                        getActivity().startService(intent);
                     }
-                    Intent intent = new Intent(getActivity().getApplicationContext(), BackService.class);
-                    getActivity().startService(intent);
-                } else {
+                }
+                else {
                     editor.putBoolean("isFirstOn", false);
                     editor.commit();
                     //Intent intent = new Intent(getActivity(), FloatWindowService.class);
                     //getActivity().stopService(intent);
+                    Intent intent = new Intent(getActivity(), BackService.class);
+                    getActivity().stopService(intent);
                 }
             }
         });
