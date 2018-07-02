@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical">
+
+    <com.example.yang.pikachu.view.ToolbarView
+        android:id="@+id/pet_toolbarview"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <com.example.yang.pikachu.view.PetSelect
+                android:id="@+id/select_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/border"
+                android:elevation="3dp" />
+
+            <com.example.yang.pikachu.view.PetSelect
+                android:id="@+id/select_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/border"
+                android:elevation="3dp" />
+
+            <com.example.yang.pikachu.view.PetSelect
+                android:id="@+id/select_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/border"
+                android:elevation="3dp" />
+
+            <com.example.yang.pikachu.view.PetSelect
+                android:id="@+id/select_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/border"
+                android:elevation="3dp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <!--<GridLayout-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center_horizontal"-->
+    <!--android:rowCount="2"-->
+    <!--android:columnCount="2">-->
+
+    <!--<com.example.yang.pikachu.view.PetSelect-->
+    <!--android:id="@+id/select_1"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="@drawable/border"-->
+    <!--android:elevation="3dp"-->
+    <!--android:layout_margin="5dp"-->
+    <!--android:layout_marginTop="10dp"/>-->
+    <!--<com.example.yang.pikachu.view.PetSelect-->
+    <!--android:id="@+id/select_2"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="@drawable/border"-->
+    <!--android:elevation="3dp"-->
+    <!--android:layout_margin="5dp"-->
+    <!--android:layout_marginTop="10dp"/>-->
+    <!--<com.example.yang.pikachu.view.PetSelect-->
+    <!--android:id="@+id/select_3"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="@drawable/border"-->
+    <!--android:elevation="3dp"-->
+    <!--android:layout_margin="5dp"/>-->
+    <!--<com.example.yang.pikachu.view.PetSelect-->
+    <!--android:id="@+id/select_4"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="@drawable/border"-->
+    <!--android:elevation="3dp"-->
+    <!--android:layout_margin="5dp"/>-->
+    <!--</GridLayout>-->
+
+</LinearLayout>
