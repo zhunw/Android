@@ -107,9 +107,9 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         //第一次登陆时的初始化
         if(!sharedPreferences.contains("times")){
             editor.putInt("times",1);
-            editor.putString("name1", "Pikachu");
-            editor.putString("name2","Crocodile");
-            editor.putString("name3","Elk");
+            editor.putString("name1", "皮皮卡");
+            editor.putString("name2","皮皮鳄");
+            editor.putString("name3","皮皮鹿");
             editor.putString("birthday1", "2018/7/1");
             editor.putString("birthday2","2018/7/2");
             editor.putString("birthday3","2018/7/3");

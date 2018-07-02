@@ -67,6 +67,18 @@ public class ClockFragment extends Fragment {
 
         listview = (ListView) rootView.findViewById(R.id.activity_main_listview);
 
+        alarm_task.add("起床");
+        alaram_selected.add(false);
+        alarm_date.add("2016年3月24号");
+        alarm_time.add("15:20");
+        alarm_beizhu.add("洗洗睡");
+        alarm_task.add("吃饭");
+        alaram_selected.add(true);
+        alarm_date.add("2016年4月21号");
+        alarm_time.add("19:35");
+        alarm_beizhu.add("吃麻麻香");
+
+
         //获取数据库消息显示信息
         String GET_ALL = "select * from alarm_task";
         Cursor cursor = dbhelper.getReadableDatabase().rawQuery(GET_ALL, null);
